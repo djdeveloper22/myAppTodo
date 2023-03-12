@@ -1,0 +1,20 @@
+<div *ngIf="ocultar" class="estilosList d-flex">
+  <div class="tareaListTask flex-2 w-100">
+    {{tareaInfo.description}}
+  </div>
+  <div class="container-icons p-2 flex-1 d-flex gap-3">
+    <i class="bi bi-pencil-fill" (click)="showDataUpdate()"></i>
+    <i class="bi bi-x-circle" (click)="deleteTask(tareaInfo)"></i>
+  </div>
+</div>
+<div *ngIf="!ocultar" class="estilosList d-flex">
+  <div class="tareaListTask flex-2 w-100">
+    <input type="text" placeholder="actualizar datos" #myTask>
+  </div>
+  <div class="container-icons p-2 flex-1 d-flex gap-3">
+    <i class="bi bi-hdd-rack" (click)="updateTaskOne(tareaInfo, myTask)"></i>
+    <!-- <i class="bi bi-pencil-fill" (click)="updateTaskOne(tareaInfo, taskUpdate)"></i> -->
+    <i class="bi bi-x-circle" (click)="showDataUpdate()"></i>
+  </div>
+</div>
+

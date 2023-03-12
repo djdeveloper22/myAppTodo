@@ -1,0 +1,15 @@
+<div class="containerApp">
+  <div class="container-input">
+
+      <input class="container__input"  #descriptionTask type="text" placeholder="ingrese una tarea">
+      <button class="btn btn-primary btn-primary--search p-3 w-100 mt-2"><i class="bi bi-search"></i></button>
+
+    <button class="btn btn-primary p-3 w-100 mt-2" (click)="saveTask(descriptionTask)"><i class="bi bi-hdd-fill"></i></button>
+  </div>
+  <ul class="pt-3 overflow-auto container__listTask">
+    <li *ngFor="let item of tareas">
+      <app-tarea-individual [tareaInfo]="item" (cambioTarea)="updated()"></app-tarea-individual>
+    </li>
+  </ul>
+</div>
+
